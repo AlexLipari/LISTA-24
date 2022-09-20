@@ -11,6 +11,8 @@ let saidasReserva = [5,6,7,8,9,]
  // cadastrar()
 let idUsuario = parseInt(prompt("Digite o id do hotel que contem a reserva:")) 
 procurarIdHotel(idUsuario)
+let idUsuarioReserva = parseInt(prompt("Digite o id da reserva:"))
+procurarIdReserva(idUsuarioReserva)
 // function cadastrar (){
 //     idHotel.push(prompt("Digite o id do Hotel:"))
 //     nomesHotel.push(prompt("Digite o nome do hotel:"))
@@ -29,20 +31,32 @@ procurarIdHotel(idUsuario)
 //}
 
 function procurarIdHotel(parametroIdHotel){
-      let hotelIdReservaAux=[]
+      let hotelIdAux=[]
     idHotelreserva.forEach((idUsuario,index) =>{
         if(idUsuario == parametroIdHotel){
             console.log("Id da reserva:",parametroIdHotel)
-            hotelIdReservaAux[hotelIdReservaAux.length]=console.log("Id do Hotel:", idHotel[index])
-            hotelIdReservaAux[hotelIdReservaAux.length]=console.log("Nome do Hotel:", nomesHotel[index])
-            hotelIdReservaAux[hotelIdReservaAux.length]=console.log("Ospede:", nomesReserva[index])
-            hotelIdReservaAux[hotelIdReservaAux.length]=console.log("dia de entrada:", entradasReserva[index])
-            hotelIdReservaAux[hotelIdReservaAux.length]=console.log("dia de saída:", saidasReserva[index])
+            hotelIdAux[hotelIdAux.length]=console.log("Id do Hotel:", idHotel[index])
+            hotelIdAux[hotelIdAux.length]=console.log("Nome do Hotel:", nomesHotel[index])
+            hotelIdAux[hotelIdAux.length]=console.log("Ospede:", nomesReserva[index])
+            hotelIdAux[hotelIdAux.length]=console.log("dia de entrada:", entradasReserva[index])
+            hotelIdAux[hotelIdAux.length]=console.log("dia de saída:", saidasReserva[index])
         }
     })
-     hotelIdReservaAux.forEach(idUsuario => console.log(idUsuario))
+     hotelIdAux.forEach(idUsuario => console.log(idUsuario))
 }
-
+function procurarIdReserva(parametroIdReserva){
+    let hotelIdReservaAux=[]
+  idHotelreserva.forEach((idUsuarioReserva,index) =>{
+      if(idUsuarioReserva == parametroIdReserva){
+          console.log("Id da reserva:",parametroIdReserva)
+          hotelIdReservaAux[hotelIdReservaAux.length]=console.log("Nome do Hotel:", nomesHotel[index])
+          hotelIdReservaAux[hotelIdReservaAux.length]=console.log("Endereço:", enderecosHotel[index])
+          hotelIdReservaAux[hotelIdReservaAux.length]=console.log("dia de entrada:", entradasReserva[index])
+          hotelIdReservaAux[hotelIdReservaAux.length]=console.log("dia de saída:", saidasReserva[index])
+      }
+  })
+   hotelIdReservaAux.forEach(idUsuarioReserva => console.log(idUsuarioReserva))
+}
 
 
 
