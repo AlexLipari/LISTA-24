@@ -5,7 +5,7 @@ let categoriasHotel = ["****","*****","*****","****","***"]
 let enderecosHotel = ["SP","RJ","RJ","SC","RN"]
 let telefonesHotel = ["(11)","(21)","(21)","(47)","(84)"]
 let idReserva = [6,7,8,9,10]
-let nomesReserva = ["Sara","Bianca","Cris","Fabiana","Ligia"]
+let nomesReserva = ["Sara","Bianca","Cris","Fabiana","Bianca"]
 let entradasReserva = [1,2,3,4,5]
 let saidasReserva = [5,6,7,8,9,]
  // cadastrar()
@@ -13,6 +13,8 @@ let idUsuario = parseInt(prompt("Digite o id do hotel que contem a reserva:"))
 procurarIdHotel(idUsuario)
 let idUsuarioReserva = parseInt(prompt("Digite o id da reserva:"))
 procurarIdReserva(idUsuarioReserva)
+let nomeUsuario = prompt("Digite em que nome está a reserva:")
+nomeReserva(nomeUsuario)
 // function cadastrar (){
 //     idHotel.push(prompt("Digite o id do Hotel:"))
 //     nomesHotel.push(prompt("Digite o nome do hotel:"))
@@ -56,6 +58,24 @@ function procurarIdReserva(parametroIdReserva){
       }
   })
    hotelIdReservaAux.forEach(idUsuarioReserva => console.log(idUsuarioReserva))
+}
+
+function nomeReserva(nomeParametro){
+    reservaNomeAux =[]
+    nomesReserva.forEach((nomeUsuario,index)=>{
+        if(nomeUsuario == nomeParametro){
+            console.log ("Ospede reserva",nomeParametro)
+            reservaNomeAux[reservaNomeAux.length]=console.log("Nome do Hotel:", nomesHotel[index]) 
+            reservaNomeAux[reservaNomeAux.length]=console.log("Categoria:", categoriasHotel[index])
+            reservaNomeAux[reservaNomeAux.length]=console.log("Endereço:", enderecosHotel[index])
+            reservaNomeAux[reservaNomeAux.length]=console.log("DDD:", telefonesHotel[index])
+            reservaNomeAux[reservaNomeAux.length]=console.log("Id reserva:", idReserva[index])
+            reservaNomeAux[reservaNomeAux.length]=console.log("dia de entrada:", entradasReserva[index])
+            reservaNomeAux[reservaNomeAux.length]=console.log("dia de saída:", saidasReserva[index])
+
+        }
+    })
+    reservaNomeAux.forEach(nomeUsuario => console.log(nomeUsuario))
 }
 
 
